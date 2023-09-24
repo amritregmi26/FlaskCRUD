@@ -1,9 +1,138 @@
 {% extends 'base.html' %}
+{% include 'header.html' %}
 
 {% block title %} Flask CRUD App {% endblock %}
 
-{% block body %} 
+{% block body %}
 
-<h1>CRUD App based on Flask</h1> 
+<div class="container ">
+
+    <div class="row">
+
+        <div class="col md-12">
+
+            <div class="bg-light p-3">
+
+                <h2 class="w-100"> Manage
+                    <b> Employees
+                        <button type="button" class="btn btn-success placement" data-bs-toggle="modal"
+                            data-bs-target="#addModal"> Add New Employees </button>
+                    </b>
+                </h2>
+
+                <table class="table table-hover table-dark">
+
+                    <tr>
+
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Action</th>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>01</td>
+                        <td>Amrit Regmi</td>
+                        <td>demo@example.com</td>
+                        <td>92883323</td>
+
+                        <td>
+
+                            <a href="" class="btn btn-warning" data-bs-target="#editModal"
+                                data-bs-toggle="modal">Update</a>
+                            <a href="" class="btn btn-danger"
+                                onclick="return confirm('Are you sure to delete?')">Delete</a>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Edit Modal -->
+                    <div class="modal fade" id="editModal" data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title">Update Information</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                    <form action="" method="post">
+
+                                        <div class="form-group mb-3">
+                                            <label>Name:</label>
+                                            <input type="text" name="name" class="form-control" value="Amrit Regmi" required="required">
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label>Email:</label>
+                                            <input type="email" name="email" class="form-control" value="demo@example.com" required="required">
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <label>Phone Number:</label>
+                                            <input type="number" name="phone" class="form-control" value="82842748" required="required">
+                                        </div>
+
+                                        <div class="form-group mb-3">
+                                            <button class="btn btn-success" type="submit">Update</button>
+                                        </div>
+
+                </table>
+
+            </div>
+
+            <!-- Add Modal -->
+            <div class="modal fade" id="addModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Add Employees</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="" method="post">
+
+                                <div class="form-group mb-3">
+                                    <label>Name:</label>
+                                    <input type="text" name="name" class="form-control" required="required">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label>Email:</label>
+                                    <input type="email" name="email" class="form-control" required="required">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <label>Phone Number:</label>
+                                    <input type="number" name="phone" class="form-control" required="required">
+                                </div>
+
+                                <div class="form-group mb-3">
+                                    <button class="btn btn-success" type="submit">Add Employees</button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>
 
 {% endblock %}

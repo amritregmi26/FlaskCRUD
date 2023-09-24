@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before
+{
+    padding: 0;
+    margin: 0;
+}
+
+h1
+{
+    text-align: center;
+    width: 100%;
+    margin-top: 3vh;
+    font-weight: bold;
+}
+
+h2
+{
+    position: relative;
+}
+
+.placement
+{
+    position: absolute;
+    top: auto;
+    right: 0%;
+}
